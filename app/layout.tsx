@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import "./globals.css";
+export const metadata:Metadata={title:"AppyAccess Pro — v3",description:"Planner + UK traffic & property data addon"};
+export default function RootLayout({children}:{children:React.ReactNode}){return(<html lang="en"><body><header className="border-b border-slate-800/60 sticky top-0 z-20 backdrop-blur bg-slate-950/60"><div className="container-slim py-4 flex items-center justify-between"><div className="flex items-center gap-3"><div className="size-9 rounded-xl bg-brand-600 grid place-items-center font-bold">AA</div><div><h1 className="text-lg font-semibold">AppyAccess Pro</h1><p className="text-xs text-slate-400 -mt-0.5">Planner + Data</p></div></div><a className="btn btn-ghost" href="#">Docs</a></div></header><main className="container-slim py-6">{children}</main><footer className="container-slim py-10 text-center text-xs text-slate-500">Built for crews who hate surprises.</footer></body></html>);}

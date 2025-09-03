@@ -1,0 +1,1 @@
+export async function fetchTfLDisruptions():Promise<any[]>{const app_id=process.env.TFL_APP_ID;const app_key=process.env.TFL_APP_KEY;const url=`https://api.tfl.gov.uk/Road/all/Disruption${app_id&&app_key?`?app_id=${app_id}&app_key=${app_key}`:''}`;try{const r=await fetch(url,{next:{revalidate:60}});if(!r.ok)return[];return await r.json();}catch{return[];}}

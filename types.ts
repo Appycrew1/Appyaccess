@@ -1,0 +1,9 @@
+export type PlaceLite={description:string;place_id:string;lat:number;lng:number;address?:string;types?:string[]};
+export type RouteInfo={distance_m:number;duration_s:number;duration_in_traffic_s?:number};
+export type WeatherDaily={date:string;tmax:number;tmin:number;windspeed:number;precipitation_mm:number};
+export type Checklist={hasLift:boolean;stairsFlights:number;narrowDoor:boolean;rearAccess:boolean;parkingAvailable:boolean;largeVehicleAccess:boolean};
+export type AnalysisPayload={origin:PlaceLite;destination:PlaceLite;moveDateISO:string;vehicleType:string;route:RouteInfo|null;weather:WeatherDaily|null;checklist:Checklist};
+export type AIResult={summary:string;crewRecommendation:string;equipment:string[];riskLevel:"Low"|"Medium"|"High";keyRisks:string[];parkingNotes:string;complianceChecklist:string[];originVsDest:string;autoChecklist:Checklist};
+export type TrafficEvent={id:string;source:string;title?:string;category?:string;status?:string;severity?:string;start?:string;end?:string;point?:{lat:number;lng:number}|null;geojson?:any;url?:string};
+export type CPZRule={zone?:string;hours?:string;notes?:string;source?:string};
+export type PropertySummary={postcode?:string;uprn?:string|null;epc?:{property_type?:string|null;built_form?:string|null;floor_area?:number|null;energy_rating?:string|null}|null;planningNotes?:string[];cpz?:CPZRule[]};
